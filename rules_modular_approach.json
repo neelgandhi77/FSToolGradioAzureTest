@@ -1,0 +1,12 @@
+{
+    "data_preprocessing": {
+        "negative value detection bool": false,
+        "negative value columns names": [],
+        "negative value columns to be handled selected by user": [],
+        "negative value handling method selected by user": "KEEP AS IT IS",
+        "outlier handling bool selected by user": false,
+        "outlier detection bool": false,
+        "duplicate value detection bool": false,
+        "duplicate value handling method selected by user": "LATEST"
+    }
+}
