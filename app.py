@@ -4,6 +4,18 @@ import json
 import os
 from fastapi import FastAPI
 
+# UI Libraries
+import gradio as gr
+from gradio.themes.base import Base
+
+# Pycaret Framework
+from pycaret.classification import ClassificationExperiment
+from pycaret.regression import RegressionExperiment
+from explainerdashboard import ClassifierExplainer, RegressionExplainer
+
+# SHaply Explanations
+import shap
+
 # # Modules Import
 # import config
 # import data_upload # Not in-use at this stage
@@ -12,9 +24,6 @@ from fastapi import FastAPI
 # import pycaret_process_with_SHAP as pycaret
 # import gradio_button_functions as gbf
 
-# UI Libraries
-import gradio as gr
-from gradio.themes.base import Base
 
 # # Visualization
 # import matplotlib.pyplot as plt
