@@ -1,6 +1,7 @@
+pycaret
+gradio==4.41.0
+gradio_client==1.3.0
 gunicorn==23.0.0
 uvicorn==0.30.6
-numpy==1.25.2
-joblib==1.3.2
-urllib3==1.26.18
-pycaret
+shap==0.44.0
+fastapi==0.112.1
