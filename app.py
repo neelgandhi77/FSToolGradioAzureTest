@@ -9,12 +9,12 @@ import gradio as gr
 #from gradio.themes.base import Base
 
 # Pycaret Framework
-from pycaret.classification import ClassificationExperiment
-from pycaret.regression import RegressionExperiment
+#from pycaret.classification import ClassificationExperiment
+#from pycaret.regression import RegressionExperiment
 #from explainerdashboard import ClassifierExplainer, RegressionExplainer
 
 # SHaply Explanations
-import shap
+#import shap
 
 # # Modules Import
 # import config
@@ -36,11 +36,12 @@ app = FastAPI()
 def pycaret_process(file_path):
     dataset = pd.read_csv(file_path)
     target_column = "SalePrice"
-    r = RegressionExperiment()
-    filtered_features = dataset.loc[:, dataset.columns != target_column]
-    filtered_dataset = pd.DataFrame(filtered_features, columns=filtered_features.columns)
-    clf = r.setup(filtered_dataset, target=dataset[target_column],preprocess=False,transformation= False, session_id=2, experiment_name ='Regression',index=False)
-    best_model = clf.compare_models(fold=5,exclude = ['lightgbm','qda','dummy','ridge','catboost','br','et','lasso','huber','llar'])
+    #r = RegressionExperiment()
+    #filtered_features = dataset.loc[:, dataset.columns != target_column]
+    #filtered_dataset = pd.DataFrame(filtered_features, columns=filtered_features.columns)
+    #clf = r.setup(filtered_dataset, target=dataset[target_column],preprocess=False,transformation= False, session_id=2, experiment_name ='Regression',index=False)
+    #best_model = clf.compare_models(fold=5,exclude = ['lightgbm','qda','dummy','ridge','catboost','br','et','lasso','huber','llar'])
+    best_model="Unable Fetch"
     return gr.Textbox(label="Best Model",value=best_model,placeholder="NOT SET")
 
 with gr.Blocks(analytics_enabled=False,title="SE FSTool") as FSTool:
