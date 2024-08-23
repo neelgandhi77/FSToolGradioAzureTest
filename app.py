@@ -6,12 +6,12 @@ from fastapi import FastAPI
 
 # UI Libraries
 import gradio as gr
-from gradio.themes.base import Base
+#from gradio.themes.base import Base
 
 # Pycaret Framework
 from pycaret.classification import ClassificationExperiment
 from pycaret.regression import RegressionExperiment
-from explainerdashboard import ClassifierExplainer, RegressionExplainer
+#from explainerdashboard import ClassifierExplainer, RegressionExplainer
 
 # SHaply Explanations
 import shap
@@ -31,15 +31,6 @@ import shap
 
 app = FastAPI()
 
-# Define the custom theme 
-custom_theme = gr.themes.Default(primary_hue= gr.themes.colors.green)
-# Define custom CSS and theme
-custom_css = """
-footer {visibility: hidden;}
-.gradio-container .image {
-        width: 10%;
-        height: 10%;
-        object-fit: contain;}
 
 """
 def pycaret_process(file_path):
@@ -52,7 +43,7 @@ def pycaret_process(file_path):
     best_model = clf.compare_models(fold=5,exclude = ['lightgbm','qda','dummy','ridge','catboost','br','et','lasso','huber','llar'])
     return gr.Textbox(label="Best Model",value=best_model,placeholder="NOT SET")
 
-with gr.Blocks(analytics_enabled=False,css=custom_css,theme=custom_theme,title="SE FSTool") as FSTool:
+with gr.Blocks(analytics_enabled=False,title="SE FSTool") as FSTool:
     gr.Markdown("<span style='color: black;'>Please upload a CSV file</span>",sanitize_html=True)
        
     with gr.Row():
