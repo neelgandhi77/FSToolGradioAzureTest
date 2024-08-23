@@ -28,10 +28,8 @@ markdown-it-py==3.0.0
 MarkupSafe==2.1.5
 matplotlib==3.9.2
 mdurl==0.1.2
-numpy==2.1.0
 orjson==3.10.7
 packaging==24.1
-pandas==2.2.2
 pillow==10.4.0
 pydantic==2.8.2
 pydantic_core==2.20.1
